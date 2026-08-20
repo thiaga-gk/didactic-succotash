@@ -1,0 +1,72 @@
+{
+  "release_id": "P1-R01",
+  "status": "BLOCKED",
+  "artifact_baseline": {
+    "prd": "databricks_compute_optimization_product_prd_v2.0.0.md",
+    "hla": "databricks_compute_optimization_high_level_architecture_v2.0.0.md",
+    "adrs": [],
+    "tsds": [],
+    "release_plan": "releases/databricks_sql_warehouse_product_release_plan_v2.0.1.md",
+    "golden_catalog": "golden-tests/databricks_sql_warehouse_golden_e2e_test_scenarios_v2.0.1.md"
+  },
+  "git": {
+    "base_branch": "develop",
+    "base_sha": "",
+    "release_branch": "release/P1-R01",
+    "worktree_path": "",
+    "validated_against_develop_sha": "",
+    "tested_head_sha": "",
+    "changed_files": []
+  },
+  "dependencies": {
+    "all_complete": false,
+    "release_ids": []
+  },
+  "tests": [],
+  "code_review": {
+    "command": "/code-review low",
+    "blocking_findings_open": null,
+    "findings_resolved": []
+  },
+  "e2e": {
+    "type": "",
+    "result": "NOT_RUN",
+    "evidence": []
+  },
+  "dab": {
+    "validate": null,
+    "deploy": null,
+    "run_ids": []
+  },
+  "known_limitations": [],
+  "rollback_or_migration_notes": "",
+  "completed_at_utc": null,
+  "source_e2e": {
+    "mode": "REAL_SOURCE_SYSTEM",
+    "mock_only": false,
+    "environment": "",
+    "source_systems": [],
+    "command": "",
+    "exit_code": null,
+    "result": "NOT_RUN",
+    "tested_head_sha": "",
+    "run_or_query_ids": [],
+    "artifact_refs": [],
+    "started_at_utc": null,
+    "completed_at_utc": null
+  },
+  "financial_evidence": {
+    "databricks_cost_basis": "",
+    "aws_cost_basis": "CUR_ACTUAL|PRICE_REGISTRY_ESTIMATE|DBX_ONLY|NOT_APPLICABLE",
+    "aws_actual_available": false,
+    "price_registry_version": null,
+    "price_registry_sha256": null
+  },
+  "merge": {
+    "eligible": false,
+    "strategy": "FAST_FORWARD_PREFERRED",
+    "develop_sha_before_merge": null,
+    "merged_head_sha": null,
+    "verified_in_develop": false
+  }
+}

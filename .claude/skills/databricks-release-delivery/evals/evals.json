@@ -1,0 +1,29 @@
+{
+  "skill_name": "databricks-release-delivery",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm on develop. Implement P1-R08 and merge it back when you're done. Unit and mocked integration tests are easy to run; use those if they're enough.",
+      "expected_output": "Creates/continues a separate release/P1-R08 worktree branched from synchronized develop; implements only P1-R08; refuses mock-only E2E as merge evidence; commits final code, rebases if develop advanced, runs /code-review low and real Databricks source-system E2E on the exact final HEAD, validates the merge gate, then fast-forwards develop to that tested commit.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Implement the financial connectivity/baseline releases, but AWS CUR isn't available yet. Keep moving and estimate AWS cost safely without pretending it's actual.",
+      "expected_output": "Uses the approved source-controlled effective-dated AWS price registry fallback, records version/hash/provenance and PRICE_REGISTRY_ESTIMATE quality, keeps Databricks billing/system-table evidence actual where possible, does not claim AWS realized/cash actual, and still requires real source-system E2E before merge.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Deliver Phase 2 release by release. Make sure the DAB and Delta model really run in our dev workspace, and merge each release to develop only after it passes.",
+      "expected_output": "Uses one worktree per P2 release, validates/deploys DAB to dev/test, exercises the Control + Bronze/Silver/Gold + ML data model against real system tables/Delta state, runs source E2E on each final commit, evidence-gates an exact fast-forward merge to develop, cleans up the worktree, then proceeds to the next release.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Implement P6-R03 now in a release worktree and merge it to develop. We can write the detailed tool security design later.",
+      "expected_output": "Creates no implementation branch/worktree beyond preflight if unnecessary and returns BLOCKED because Phase-6 production tool access lacks the approved detailed TSD/security/evaluation package; it does not invent tool schemas or merge anything.",
+      "files": []
+    }
+  ]
+}

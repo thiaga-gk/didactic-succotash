@@ -1,0 +1,9 @@
+registry_version: "UNPOPULATED"
+currency: "USD"
+generated_at_utc: null
+
+# Populate only reviewed, effective-dated entries for the regions/resource keys
+# actually required by the SQL Warehouse financial provider.
+# Do not invent prices. Prefer AWS Price List evidence for On-Demand.
+# For Spot estimates include estimation_method + observation window/source.
+entries: []

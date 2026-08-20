@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AWS EC2 Price Registry",
+  "type": "object",
+  "required": [
+    "registry_version",
+    "currency",
+    "entries"
+  ],
+  "properties": {
+    "registry_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "currency": {
+      "const": "USD"
+    },
+    "generated_at_utc": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "cloud",
+          "service",
+          "region",
+          "resource_type",
+          "purchase_option",
+          "currency",
+          "unit",
+          "price",
+          "effective_start_utc",
+          "source_type",
+          "source_reference",
+          "source_retrieved_at_utc"
+        ],
+        "properties": {
+          "cloud": {
+            "const": "AWS"
+          },
+          "service": {
+            "type": "string",
+            "minLength": 1
+          },
+          "region": {
+            "type": "string",
+            "minLength": 1
+          },
+          "availability_zone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "resource_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "instance_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "operating_system": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tenancy": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "purchase_option": {
+            "enum": [
+              "ON_DEMAND",
+              "SPOT",
+              "OTHER_ESTIMATE"
+            ]
+          },
+          "currency": {
+            "const": "USD"
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "price": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]{1,8})?$"
+          },
+          "effective_start_utc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "effective_end_utc": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "estimation_method": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "observation_start_utc": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "observation_end_utc": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "source_type": {
+            "enum": [
+              "AWS_PRICE_LIST",
+              "AWS_SPOT_PRICE_HISTORY",
+              "APPROVED_MANUAL"
+            ]
+          },
+          "source_reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_retrieved_at_utc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
